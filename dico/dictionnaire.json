@@ -1,5 +1,13 @@
-[{
-	"mots": "lettre",
-	"mots": "opérateur",
-	"mots" : "chien"
-}]
+{
+	"0" : "lettre",
+	"1" : "operateur",
+	"2" : "chien",
+	"3" : "suriner",
+	"4" : "surina",
+	"5" : "luzerne",
+	"6" : "sciage",
+	"7" : "fourmilier",
+	"8" : "ebullition",
+	"9" : "Remplissage",
+	"10": "Contempler"
+}
