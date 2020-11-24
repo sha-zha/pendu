@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/style.css">
 	<title>Jeu du pendu</title>
 </head>
 <body>
@@ -44,7 +45,10 @@
 						</div>
 					</div>
 					
-					_ _ _ _ _ _ _ _ 
+					<div class="conatainer border mx-auto mb-3 mt-3" id="img-pendu">
+						
+					</div>
+					<p class="col-8">_ _ _ _ _ _ _ _</p> 
 
 
 				</div>

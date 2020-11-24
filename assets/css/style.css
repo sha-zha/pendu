@@ -1,0 +1,14 @@
+/******************
+* Images du pendu *
+*******************/
+
+#img-pendu{
+	height: 300px;
+	width: 200px ;
+}
+
+#img-pendu{
+	background-image: url("../images/pendus-default.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
