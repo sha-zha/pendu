@@ -48,7 +48,7 @@
 					<div class="conatainer border mx-auto mb-3 mt-3" id="img-pendu">
 						
 					</div>
-					<p class="col-8" id="trouve"></p> 
+					<div class="col-8 d-flex" id="trouve"></div> 
 
 
 				</div>
