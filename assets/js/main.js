@@ -2,18 +2,17 @@ $(document).ready(function(){
 
 let url = '../php/Mot.php';
 var error = 0 ;
+var good = 0;
 
 	//Afficher le nombre de trait
 	$.post(url,{action:'random'},function(data) {
 
-
-		for (var i = 0; i < data.length; i++) {
+		for (var i = 0; i < data.mot; i++) {
 			$('#trouve').append('<span id="'+i+'" class="mx-auto">_</span>');
 		}
 
-  		console.log(data)
-  		console.log('taille : '+data.length)
-	});
+  		
+	},"json");
 
 
 
@@ -26,10 +25,13 @@ String.prototype.replaceAt = function(index, replacement) {
 
 		//envoye lettre 
 		$.post(url,{action: 'verif', lettre : lettre },function (data) {
+			var span= $('#trouve').find('span');
+
+
 
 			if(data.success == true ){
     			
-    			var span= $('#trouve').find('span');
+    			
     			
     			for (var i = 0; i < span.length; i++) {
 
@@ -37,8 +39,15 @@ String.prototype.replaceAt = function(index, replacement) {
     			    for (var j = 0; j < data.position.length; j++) {
     			    	console.log($(span[i]).attr('id') )
     			    	console.log(data.position[j])
+    					//correspondance possition
     					if($(span[i]).attr('id') == data.position[j] ){
-    					$(span[i]).html(data.lettre)
+    						$(span[i]).html(data.lettre)
+
+    						good++;
+
+    						if(span.length == good ){
+								$('#message').html('<p class="alert alert-info ">Vous avez gagné</p><a>Rejouer ?</a>')
+							}
     					} 
     				}
     			
@@ -46,7 +55,7 @@ String.prototype.replaceAt = function(index, replacement) {
     			}
 
 
-		
+				
 
 			}else{
 

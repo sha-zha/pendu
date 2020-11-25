@@ -23,13 +23,17 @@ function aleatoire ()
 		$rand_keys = array_rand($fileDico, 2 );
 		$_SESSION['mot'] = $fileDico[$rand_keys[0]];
 
-		return $_SESSION['mot'];
+		$message  = array('success'=>false, 'mot'=>strlen( $fileDico[$rand_keys[0]] ) );
+
+		return $message;
 	}else{
 		//ranom des mots 
 		$rand_keys = array_rand($fileDico, 2 );
 		$_SESSION['mot'] = $fileDico[$rand_keys[0]];
 
-		return $_SESSION['mot'];
+		$message  = array('success'=>false, 'mot'=>strlen($fileDico[$rand_keys[0]]) );
+
+		return $message;
 	}
 }
 
@@ -90,7 +94,7 @@ if(!empty($_POST['action'] ) ){
 		case 'random':
 			$mot = aleatoire();
 
-			echo $mot;
+			echo json_encode($mot );
 			break;
 
 		case 'verif':
