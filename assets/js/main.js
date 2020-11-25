@@ -27,8 +27,6 @@ String.prototype.replaceAt = function(index, replacement) {
 		$.post(url,{action: 'verif', lettre : lettre },function (data) {
 			var span= $('#trouve').find('span');
 
-
-
 			if(data.success == true ){
     			
     			
@@ -46,7 +44,7 @@ String.prototype.replaceAt = function(index, replacement) {
     						good++;
 
     						if(span.length == good ){
-								$('#message').html('<p class="alert alert-info ">Vous avez gagné</p><a>Rejouer ?</a>')
+								$('#message').html('<p class="alert alert-info ">Vous avez gagné ! <a href="index.php">Rejouer ?</a></p>')
 							}
     					} 
     				}
@@ -101,7 +99,8 @@ String.prototype.replaceAt = function(index, replacement) {
 			 	case 9 :
 			 		$('#img-pendu').css('background-position', '-2250px 0px');
 
-
+			 		$('#message').html('<p class="alert alert-danger ">Vous avez perdu! <a href="index.php">Rejouer ?</a></p>');
+			 		$('#trouve').html('');
 			 	break;
 
 			 	default :
