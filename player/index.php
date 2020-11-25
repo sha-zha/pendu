@@ -48,7 +48,7 @@
 					<div class="conatainer border mx-auto mb-3 mt-3" id="img-pendu">
 						
 					</div>
-					<div class="col-8 d-flex" id="trouve"></div> 
+					<div class="d-flex justify-content-center align-content-center" id="trouve"></div> 
 
 
 				</div>

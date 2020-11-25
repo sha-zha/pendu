@@ -8,9 +8,9 @@ var error = 0 ;
 
 
 		for (var i = 0; i < data.length; i++) {
-			$('#trouve').append('_ ');
+			$('#trouve').append('<span id="'+i+'" class="mx-auto">_</span>');
 		}
-  		
+
   		console.log(data)
   		console.log('taille : '+data.length)
 	});
@@ -26,46 +26,27 @@ String.prototype.replaceAt = function(index, replacement) {
 
 		//envoye lettre 
 		$.post(url,{action: 'verif', lettre : lettre },function (data) {
-			console.log('success : '+data.success);
-			console.log('position :' + data.position);
-			console.log(data)
 
 			if(data.success == true ){
     			
-    			var text = $('#trouve').html();
+    			var span= $('#trouve').find('span');
+    			
+    			for (var i = 0; i < span.length; i++) {
+
+    				//remplacer le _ par la lettre
+    			    for (var j = 0; j < data.position.length; j++) {
+    			    	console.log($(span[i]).attr('id') )
+    			    	console.log(data.position[j])
+    					if($(span[i]).attr('id') == data.position[j] ){
+    					$(span[i]).html(data.lettre)
+    					} 
+    				}
+    			
+    				
+    			}
+
+
 		
-				for (var i = 0; i < data.taille; i++) {
-					console.log(text)
-
-						if(i == data.position){
-							if(text.indexOf('_') == -1 ){
-
-								console.log( text.indexOf('_') )
-
-							}else{
-							var new_text = text.replaceAt(data.position, data.lettre);
-							console.log(new_text)
-
-							$('#trouve').html(new_text)
-							}
-
-									
-							
-		
-						}else{
-							if(data.taille *2 == $('#trouve').html().length ||  $('#trouve').html().length > data.taille*2 ){
-
-							}else{
-								
-								$('#trouve').append('_ ');
-								
-
-							}
-							
-						}
-					
-			
-				}
 
 			}else{
 
@@ -111,7 +92,7 @@ String.prototype.replaceAt = function(index, replacement) {
 			 	case 9 :
 			 		$('#img-pendu').css('background-position', '-2250px 0px');
 
-			 		
+
 			 	break;
 
 			 	default :

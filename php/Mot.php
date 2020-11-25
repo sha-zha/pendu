@@ -2,10 +2,10 @@
 session_start();
 
 //obtient contenu du fichier json
-// $file = file_get_contents("../dico/dictionnaire.json");
-// $fileDico = json_decode($file, true);
+$file = file_get_contents("../dico/dictionnaire.json");
+$fileDico = json_decode($file, true);
 
-$fileDico = array("0"=>"CHIEN", "1"=>"CHIEN");
+// $fileDico = array("0"=>"FILLE", "1"=>"FILLE");
 
 /* aleatoire
 * permet de retourner un mot de façon aléatoire
