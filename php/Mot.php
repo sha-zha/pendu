@@ -5,8 +5,6 @@ session_start();
 $file = file_get_contents("../dico/dictionnaire.json");
 $fileDico = json_decode($file, true);
 
-// $fileDico = array("0"=>"FILLE", "1"=>"FILLE");
-
 /* aleatoire
 * permet de retourner un mot de façon aléatoire
 * 
@@ -41,7 +39,7 @@ function verif ($lettre)
 {
 
 
-	if($_SESSION != Null){
+	if($_SESSION['mot'] != Null){
 		$recherche = $_SESSION['mot'];
 
 		//met en majuscule
@@ -77,8 +75,7 @@ function verif ($lettre)
 		return $message;
 	}else{
 
-		session_destroy();
-		$_SESSION['mot'] = null;
+		aleatoire ();
 		
 	}
 }
