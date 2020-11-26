@@ -104,7 +104,7 @@ String.prototype.replaceAt = function(index, replacement) {
 			 	break;
 
 			 	default :
-
+ 
 			 	break;
 			 }
 			 console.log(error)
