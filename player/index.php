@@ -7,7 +7,7 @@
 	<title>Jeu du pendu</title>
 </head>
 <body>
-	<main class="container">
+	<main class="container ">
 
 		<section class="row">
 			<div class="col-12" id="message">
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 					
-					<div class="conatainer border mx-auto mb-3 mt-3" id="img-pendu">
+					<div class="conatainer border mx-auto mb-3 mt-3 bg-dark" id="img-pendu">
 						
 					</div>
 					<div class="d-flex justify-content-center align-content-center" id="trouve"></div> 
